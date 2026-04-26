@@ -1,0 +1,289 @@
+<!-- biography.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keanu Reeves Biography - Exclusive Meet & Greet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 100px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2c2c2c;
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            margin: 20px auto;
+        }
+
+        .bio-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .bio-section {
+            margin-bottom: 3rem;
+        }
+
+        .bio-section h3 {
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .bio-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .bio-container {
+                padding: 20px;
+                margin: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">KEANU REEVES</a>
+            <button class="mobile-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="films.html">Filmography</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1 class="page-title">Keanu Reeves Biography</h1>
+            <div class="bio-container">
+                <div class="bio-section">
+                    <h3>Early Life</h3>
+                    <p>Keanu Charles Reeves was born on September 2, 1964, in Beirut, Lebanon, to Patricia Taylor (née Hohn) and Samuel Nowlin Reeves Jr. His father is from Hawaii and his mother is from England. Reeves grew up in Toronto, Canada, where he began acting in theater productions and television shows as a teenager.</p>
+                    <p>Despite facing family challenges, including his father's abandonment and his brother's battle with leukemia, Reeves found solace in acting and sports, particularly ice hockey, which he played competitively.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h3>Rise to Fame</h3>
+                    <p>Reeves' breakthrough came with his role in "River's Edge" (1986), but it was "Bill & Ted's Excellent Adventure" (1989) that made him a household name. The film's success led to a sequel and established Reeves as a beloved figure in Hollywood.</p>
+                    <p>His diverse filmography includes indie darlings like "My Own Private Idaho" (1991) alongside mainstream hits, showcasing his range as an actor. Reeves' method of choosing roles based on character depth rather than box office potential has earned him respect from peers and critics alike.</p>
+                </div>
+
+                <div class="highlight">
+                    <strong>Notable Achievement:</strong> Reeves is known for his kindness and generosity in Hollywood. He donated millions to cancer research and gave significant portions of his earnings from "Matrix" films to special effects crews, demonstrating his commitment to giving back.
+                </div>
+
+                <div class="bio-section">
+                    <h3>The Matrix Era</h3>
+                    <p>The "Matrix" trilogy (1999-2003) cemented Reeves' status as an action star and cultural icon. His portrayal of Neo became one of the most recognizable characters in science fiction cinema. The films' innovative special effects and philosophical themes resonated with audiences worldwide.</p>
+                    <p>Reeves performed many of his own stunts, contributing to the authentic feel of the action sequences. The success of the Matrix films opened new doors for Reeves in the action genre.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h3>John Wick Series</h3>
+                    <p>The John Wick series (2014-present) marked Reeves' return to action stardom and showcased his evolution as an action performer. The films' precise choreography and Reeves' committed performances revitalized the action genre.</p>
+                    <p>These films demonstrated Reeves' dedication to his craft, as he underwent extensive training to perform the complex fight scenes that became signature to the franchise.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h3>Personal Philosophy</h3>
+                    <p>Reeves is known for his humble demeanor and genuine kindness toward fans and colleagues. Despite his fame, he maintains a relatively private life and focuses on his craft and philanthropy. His approach to acting emphasizes character development and emotional authenticity.</p>
+                    <p>His life experiences, including personal losses and challenges, have shaped his perspective and contributed to his grounded approach to fame and success.</p>
+                </div>
+
+                <a href="index.html" class="back-home">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Note: Contact the management team for further information</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

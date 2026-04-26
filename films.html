@@ -1,0 +1,361 @@
+<!-- films.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keanu Reeves Filmography - Exclusive Meet & Greet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 100px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2c2c2c;
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            margin: 20px auto;
+        }
+
+        .filmography-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .film-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .film-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .film-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .film-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .film-year {
+            color: #d4af37;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .film-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .highlight-film {
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .films-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">KEANU REEVES</a>
+            <button class="mobile-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="films.html">Filmography</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1 class="page-title">Keanu Reeves Filmography</h1>
+            <div class="filmography-container">
+                <div class="film-category">
+                    <h2 class="category-title">Iconic Action Films</h2>
+                    <div class="films-grid">
+                        <div class="film-card highlight-film">
+                            <span class="film-title">The Matrix</span>
+                            <span class="film-year">(1999)</span>
+                            <p class="film-description">Groundbreaking sci-fi action film that redefined special effects and philosophy in cinema. Reeves' portrayal of Neo became iconic.</p>
+                        </div>
+                        <div class="film-card highlight-film">
+                            <span class="film-title">John Wick</span>
+                            <span class="film-year">(2014)</span>
+                            <p class="film-description">Revolutionary action thriller that showcased Reeves' dedication to practical stunts and intense fight choreography.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">Speed</span>
+                            <span class="film-year">(1994)</span>
+                            <p class="film-description">High-octane thriller that established Reeves as a leading action star with its tense plot and memorable performances.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="film-category">
+                    <h2 class="category-title">Cult Classics & Indies</h2>
+                    <div class="films-grid">
+                        <div class="film-card">
+                            <span class="film-title">Bill & Ted's Excellent Adventure</span>
+                            <span class="film-year">(1989)</span>
+                            <p class="film-description">Beloved time-travel comedy that made Reeves a household name with its charming humor and positive message.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">My Own Private Idaho</span>
+                            <span class="film-year">(1991)</span>
+                            <p class="film-description">Independent drama showcasing Reeves' dramatic range as a narcoleptic street hustler in this Gus Van Sant masterpiece.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">Point Break</span>
+                            <span class="film-year">(1991)</span>
+                            <p class="film-description">Action thriller featuring extreme sports and bank robbery, demonstrating Reeves' ability in adrenaline-fueled roles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="film-category">
+                    <h2 class="category-title">Dramatic Roles</h2>
+                    <div class="films-grid">
+                        <div class="film-card">
+                            <span class="film-title">A Scanner Darkly</span>
+                            <span class="film-year">(2006)</span>
+                            <p class="film-description">Animated psychological thriller exploring drug addiction and surveillance, featuring Reeves in a complex dramatic role.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">The Devil's Advocate</span>
+                            <span class="film-year">(1997)</span>
+                            <p class="film-description">Supernatural thriller co-starring Al Pacino, showcasing Reeves' performance in a morally complex narrative.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">Constantine</span>
+                            <span class="film-year">(2005)</span>
+                            <p class="film-description">Supernatural horror film based on DC Comics' Hellblazer, featuring Reeves as the titular exorcist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="film-category">
+                    <h2 class="category-title">Recent Successes</h2>
+                    <div class="films-grid">
+                        <div class="film-card highlight-film">
+                            <span class="film-title">John Wick: Chapter 2</span>
+                            <span class="film-year">(2017)</span>
+                            <p class="film-description">Expanded the John Wick universe with even more intricate action sequences and world-building.</p>
+                        </div>
+                        <div class="film-card highlight-film">
+                            <span class="film-title">John Wick: Chapter 3 – Parabellum</span>
+                            <span class="film-year">(2019)</span>
+                            <p class="film-description">Continued the acclaimed series with record-breaking opening weekend and spectacular action choreography.</p>
+                        </div>
+                        <div class="film-card">
+                            <span class="film-title">The Matrix Reloaded</span>
+                            <span class="film-year">(2003)</span>
+                            <p class="film-description">Sequel expanding the Matrix universe with more complex philosophy and groundbreaking action sequences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html" class="back-home">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Note: Contact the management team for further information</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
